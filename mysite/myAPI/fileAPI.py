@@ -3,6 +3,9 @@ import os
 import datetime
 from .listdictAPI import  listdictAPI
 
+imgExt = ['.bmp', '.gif', '.jpg', '.pic', '.png', '.tif', '.jpeg', '.php',\
+          '.BMP', '.GIF', '.JPG', '.PIC', '.PNG', '.TIF', '.JPEG', '.PHP']
+
 class MyFile:
     """
         from myAPI.fileAPI import MyFile
