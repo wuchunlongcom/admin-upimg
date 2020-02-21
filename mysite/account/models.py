@@ -2,9 +2,6 @@
 
 import os
 from django.db import models
-from django.db.models.signals import post_delete
-from django.dispatch import receiver 
-from django.conf import settings
 from django.utils.html import format_html
 
     
@@ -21,7 +18,23 @@ class Image(models.Model):
         )
     image_data.short_description = u'图片'
     
-    
+
+'''
+django admin删除记录同时删除文件的两种方法
+第一种方法：
+pip install django-cleanup
+INSTALLED_APPS = (
+      
+    'django_cleanup.apps.CleanupConfig',
+
+)
+
+第二种方法：
+models.py
+from django.db.models.signals import post_delete
+from django.dispatch import receiver 
+from django.conf import settings
+## 添加监听器    
 @receiver(post_delete, sender=Image)
 def delete_upload_files(sender, instance, **kwargs):   
     """
@@ -33,3 +46,5 @@ def delete_upload_files(sender, instance, **kwargs):
     fname = os.path.join(settings.MEDIA_ROOT, str(files))
     if os.path.isfile(fname):
         os.remove(fname)
+        
+'''

@@ -3,3 +3,4 @@ gunicorn
 markdown2
 django==2.2.6
 Pillow
+django-cleanup

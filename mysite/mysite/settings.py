@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     
     'myAPI.apps.MyAPIConfig',
     'account.apps.AccountConfig',
+    'django_cleanup.apps.CleanupConfig',
    
 ]
 
