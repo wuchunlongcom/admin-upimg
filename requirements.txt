@@ -1,6 +1,6 @@
 gevent
 gunicorn
 markdown2
-django==2.2.6
+django==2.2.22
 Pillow
 django-cleanup
